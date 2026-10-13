@@ -1,0 +1,8 @@
+Crea un programa que ejecute el comando grep para seleccionar las líneas de un fichero que contengan un texto,
+y que las escriba en otro fichero. El texto, el fichero en el que se buscan las líneas que contienen el texto
+y el fichero en el que se escriben las líneas que contienen el texto se pasan como argumentos de línea de comandos.
+Puedes desarrollar el programa a partir del primer programa de ejemplo. Solo hay que utilizar adecuadamente los
+Crea una secuencia de procesos que tenga como salida el resultado de ejecutar el comando
+ vídeo y sus tipos de fichero. Debe crearse una secuencia con ambos procesos (grep ^video y sed "s/\t\t*/:/g"),
+ enlazados mediante una tubería, con ProcessBuilder.startPipeline(). Después, debe redirigirse a la entrada
+ estándar del primero el contenido del fichero /etc/fstab, y redirigir la salida estándar del comando hacia la propia.

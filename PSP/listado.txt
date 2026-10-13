@@ -1,0 +1,9 @@
+total 24
+-rw-rw-r-- 1 dam2 dam2  113 oct  6 20:23 Entrada-ej4
+-rw-rw-r-- 1 dam2 dam2    0 oct 13 19:23 listado.txt
+-rw-rw-r-- 1 dam2 dam2  642 oct  6 19:42 pom.xml
+-rw-rw-r-- 1 dam2 dam2    0 oct  6 20:25 salida-ej4.txt
+-rw-rw-r-- 1 dam2 dam2  886 oct  6 19:57 salida.txt
+drwxrwxr-x 4 dam2 dam2 4096 oct  6 19:42 src
+drwxrwxr-x 4 dam2 dam2 4096 oct  6 19:56 target
+-rw-rw-r-- 1 dam2 dam2 1030 oct  6 19:55 Texto

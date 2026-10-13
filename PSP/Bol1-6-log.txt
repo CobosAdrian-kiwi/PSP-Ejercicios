@@ -1,0 +1,5 @@
+ERROR Crea un programa que ejecute el comando grep para seleccionar las líneas de un fichero que contengan un texto,
+ERROR y el fichero en el que se escriben las líneas que contienen el texto se pasan como argumentos de línea de comandos.
+ERROR grep ^video /etc/mime.types | sed "s/\t\t*/:/g". Este comando muestra los tipos MIME para
+ERROR  enlazados mediante una tubería, con ProcessBuilder.startPipeline(). Después, debe redirigirse a la entrada
+ERROR estándar del primero el contenido del fichero /etc/fstab, y redirigir la salida estándar del comando hacia la propia.
