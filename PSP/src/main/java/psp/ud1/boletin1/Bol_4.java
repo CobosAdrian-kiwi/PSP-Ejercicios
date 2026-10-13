@@ -1,4 +1,4 @@
-package psp.ud1.boletin1;
+package main.java.psp.ud1.boletin1;
 
 import java.io.BufferedReader;
 import java.io.File;
