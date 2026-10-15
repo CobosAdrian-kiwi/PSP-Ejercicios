@@ -1,4 +1,4 @@
-package psp.ud1;
+package main.java.psp.ud1;
 
 
 /*
@@ -14,6 +14,7 @@ para el comando wc desde el fichero indicado. La ejecución del programa termina
 
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Boletin1 {
@@ -23,11 +24,26 @@ public class Boletin1 {
         Scanner sc = new Scanner(System.in);
         String nombrefich = sc.nextLine();
 
-        while (nombrefich != ""){
-            ProcessBuilder pb = new ProcessBuilder("wc", "-lwm");
-            pb.redirectInput(new File(nombrefich));
-            pb.redirectOutput();
+        String comando = "$t = Get-Content -Raw '" + nombrefich + "'; " + "$lineas = (Get-Content '" + nombrefich
+                + "').Count; " + "$palabras = ($t -split '\\s+' | Where-Object {$_}).Count; "
+                + "$caracteres = $t.Length; " + "Write-Output \"$lineas $palabras $caracteres\"";
+
+        ProcessBuilder pb = new ProcessBuilder("powershell.exe", "-NoProfile", "-Command", comando);
+        pb.redirectError(ProcessBuilder.Redirect.INHERIT);
+        pb.redirectOutput(ProcessBuilder.Redirect.INHERIT);
+
+        try {
+            Process p = pb.start();
+
+            while (nombrefich != ""){
+
+            }
+
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
 
     }
 }

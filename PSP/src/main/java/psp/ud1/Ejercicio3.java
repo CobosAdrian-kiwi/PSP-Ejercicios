@@ -1,4 +1,4 @@
-package psp.ud1;
+package main.java.psp.ud1;
 
 /*
 Crea un programa que ejecute el comando grep para seleccionar las

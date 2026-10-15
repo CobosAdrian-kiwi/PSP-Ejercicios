@@ -1,4 +1,4 @@
-package psp.ud1;
+package main.java.psp.ud1;
 
 import java.io.File;
 import java.io.IOException;
