@@ -13,35 +13,46 @@ para el comando wc desde el fichero indicado. La ejecución del programa termina
  */
 
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Boletin1 {
     public static void main(String[] args) {
-
-        System.out.println("cuentaficheros>");
         Scanner sc = new Scanner(System.in);
-        String nombrefich = sc.nextLine();
 
-        String comando = "$t = Get-Content -Raw '" + nombrefich + "'; " + "$lineas = (Get-Content '" + nombrefich
-                + "').Count; " + "$palabras = ($t -split '\\s+' | Where-Object {$_}).Count; "
-                + "$caracteres = $t.Length; " + "Write-Output \"$lineas $palabras $caracteres\"";
+        while (true){
+            System.out.println("cuentaficheros>");
+            String nombrefich = sc.nextLine();
 
-        ProcessBuilder pb = new ProcessBuilder("powershell.exe", "-NoProfile", "-Command", comando);
-        pb.redirectError(ProcessBuilder.Redirect.INHERIT);
-        pb.redirectOutput(ProcessBuilder.Redirect.INHERIT);
-
-        try {
-            Process p = pb.start();
-
-            while (nombrefich != ""){
-
+            if (nombrefich == ""){
+                System.out.println("Finalizando...");
+                break;
             }
 
+            String comando = "wc -l -w -m '" + nombrefich + "' | awk '{print $1, $2, $3}'";
 
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            ProcessBuilder pb = new ProcessBuilder("bash", "-c", comando);
+
+            pb.redirectError(ProcessBuilder.Redirect.INHERIT);
+            pb.redirectOutput(ProcessBuilder.Redirect.INHERIT);
+
+            BufferedReader reader = null;
+
+
+
+            try {
+                Process p = pb.start();
+
+                p.waitFor();
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (InterruptedException e) {
+
+            }
         }
 
 
