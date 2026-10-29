@@ -1,4 +1,4 @@
-package main.java.psp.ud2;
+package main.java.psp.ud2.ejercicio3;
 
 import java.util.Random;
 
